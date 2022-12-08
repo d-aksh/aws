@@ -19,15 +19,15 @@ pipeline{
 		   
       withCredentials([string(credentialsId: 'awspwd', variable: 'awspwd')])
       {
-			sh "docker login -u ImpressicoAkash -p ${awspwd}"
+			sh "docker login -u impressicoakash -p ${awspwd}"
 	    }
-	    sh "docker push ImpressicoAkash/akash_image"
+	    sh "docker push impressicoakash/akash_image"
 		}
 	    }
 	}
 			stage('start') {
 		    steps {
-				    sh "docker run -itd -p 80:80 --name webserver ImpressicoAkash/akash_image"
+				    sh "docker run -itd -p 80:80 --name webserver impressicoakash/akash_image"
 		        }
 		    }
 		
