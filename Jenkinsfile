@@ -10,7 +10,7 @@ pipeline{
         }
         stage('Build') {
 			steps {
-				sh 'docker build -t ImpressicoAkash/akash_image:latest .'
+				sh 'docker build -t impressicoakash/akash_image:latest .'
 			}
 		}
 	stage('Push') {
